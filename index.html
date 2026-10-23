@@ -1,0 +1,91 @@
+<header>
+        <h1>الرياضيات في الحضارة الإغريقية 🏛️</h1>
+        <p>رحلة تفاعلية في رحاب الفكر الرياضي والبرهان الهندسي</p>
+    </header>
+
+    <nav>
+        <a href="#intro">المقدمة</a>
+        <a href="#timeline">علماء الإغريق</a>
+        <a href="#interactive">معمل التفاعل</a>
+        <a href="#quiz">اختبر معلوماتك</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Intro Section -->
+        <section id="intro" class="card">
+            <h2>1. تحول مفهوم الرياضيات عند الإغريق</h2>
+            <p>قبل الحضارة الإغريقية، كانت الرياضيات أداة قياس عملية لحساب مساحات الأراضي والضرائب. لكن مع ظهور المفكرين الإغريق، تحولت الرياضيات من علم تطبيقي إلى <strong>علم نظري استدلالي</strong> يقوم على البرهان، البديهيات، والمنطق الفلسفي.</p>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="card">
+            <h2>2. خط زمني لأبرز العلماء والرواد</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>طاليس الملطي (624 - 546 ق.م)</h3>
+                    <p>أول من أدخل البرهان الهندسي واستخدم خصائص المثلثات لحساب ارتفاع الأهرامات.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>فيثاغورس (570 - 495 ق.م)</h3>
+                    <p>مؤسس المدرسة الفيثاغورية، وصاحب مبرهنة العلاقة بين أضلاع المثلث القائم: $a^2 + b^2 = c^2$.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>أقليدس (300 ق.م)</h3>
+                    <p>صاحب كتاب "الأصول"، العمدة في بناء الهندسة النظرية عبر المسلمات والبديهيات المنطقية.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>أرخميدس (287 - 212 ق.م)</h3>
+                    <p>عبقري الحساب والهندسة، استطاع تقريب قيمة الثابت ($\pi$) وحساب حجوم الكرات والسطوح الدورانية.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section id="interactive" class="card">
+            <h2>3. محاكاة تفاعلية: مبرهنة فيثاغورس</h2>
+            <p>اضغطي على الزر لحساب طول الوتر لمثلث قائم أضلاعه القائمة 3 و 4:</p>
+            <div class="interactive-box">
+                <p>الضلع الأول ($a$) = 3 | الضلع الثاني ($b$) = 4</p>
+                <button class="btn-interactive" onclick="calculateHypotenuse()">احسب طول الوتر ($c$)</button>
+                <p id="calc-result" style="font-size: 1.2rem; color: var(--primary); font-weight: bold; margin-top: 10px;"></p>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="card">
+            <h2>4. اختبر معلوماتك في الرياضيات الإغريقية 🧠</h2>
+            <p>سؤال: من هو العالم الإغريقي الذي جمع أسس الهندسة في كتاب "الأصول"؟</p>
+            <button class="quiz-option" onclick="checkAnswer(false)">أرخميدس</button>
+            <button class="quiz-option" onclick="checkAnswer(true)">أقليدس</button>
+            <button class="quiz-option" onclick="checkAnswer(false)">طاليس</button>
+            <div id="quiz-result"></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>عرض تفاعلي حول الرياضيات الإغريقية | تم التطوير باستخدام GitHub Pages</p>
+    </footer>
+
+    <script>
+        function calculateHypotenuse() {
+            let a = 3;
+            let b = 4;
+            let c = Math.sqrt(a*a + b*b);
+            document.getElementById('calc-result').innerText = "طول الوتر (c) = " + c + "  (لأن 3² + 4² = 9 + 16 = 25، وجذر 25 هو 5)";
+        }
+
+        function checkAnswer(isCorrect) {
+            let resultDiv = document.getElementById('quiz-result');
+            if(isCorrect) {
+                resultDiv.innerText = "✨ إجابة صحيحة! أقليدس هو مؤلف كتاب الأصول.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.innerText = "❌ إجابة خاطئة، حاول مجدداً!";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
